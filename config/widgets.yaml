@@ -6,13 +6,7 @@
     cpu: true
     memory: true
     disk: /
-    label: VPS_PLATFORM
-
-- search:
-    provider: duckduckgo
-    target: _blank
-    focus: true
-    showSearchSuggestions: true
+    label: VPS
 
 - datetime:
     text_size: xl

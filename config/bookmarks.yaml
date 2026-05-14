@@ -1,44 +1,31 @@
 ---
-# Catégorie "🧩 Composants internes" — briques sans UI web qui composent
+# Catégorie "Composants internes" — briques sans UI web qui composent
 # l'architecture mais qu'on n'ouvre pas dans le navigateur.
 # Listés ici à titre documentaire pour refléter le schéma d'archi complet.
 # Format Bookmarks (compact) — doc : https://gethomepage.dev/configs/bookmarks/
 #
-# Phase 1 : aucun composant interne notable à exposer (OP gère son Postgres
-# en interne, le bot persiste un fichier local).
-# Phase 2+ : à dé-commenter quand les VPS correspondants arrivent.
+# Inventaire des hôtes VPS. Ces entrées sont documentaires : elles pointent
+# vers SSH, pas vers une interface web.
 
-# - 🧩 Composants internes (sans UI):
-#     - VPS_AI_STACK:
-#         - vLLM:
-#             icon: mdi-chip
-#             href: '#'
-#             description: LLM Engine GPU — API OpenAI-compatible
-#         - ChromaDB:
-#             icon: mdi-database
-#             href: '#'
-#             description: Vector DB — API uniquement
-#         - Postgres / Redis (AI):
-#             icon: mdi-database
-#             href: '#'
-#             description: Métadonnées & cache de la stack IA
-#
-#     - VPS_MONITORING:
-#         - Loki:
-#             icon: mdi-text-box-search
-#             href: '#'
-#             description: Logs aggregation — interroger via Grafana
-#         - Tempo:
-#             icon: mdi-arrow-decision
-#             href: '#'
-#             description: Distributed tracing — interroger via Grafana
-#         - Agents (par VPS):
-#             icon: mdi-radar
-#             href: '#'
-#             description: Promtail (logs) / cAdvisor (containers) / node-exporter (hôte)
-#
-#     - VPS_PLATFORM:
-#         - Backup orchestration:
-#             icon: mdi-backup-restore
-#             href: '#'
-#             description: Ansible → NAS FLAVIO (Phase 2)
+- Inventaire VPS:
+    - Bastion:
+        - abbr: BA
+          href: ssh://bastion.dpl.lan:2222
+          description: |
+            DNS  bastion.dpl.lan / bastion-01.dpl.lan
+            IP   10.10.0.1
+            SSH  2222 (public ou VPN)
+    - Monitoring:
+        - abbr: MO
+          href: ssh://monitoring.dpl.lan:2222
+          description: |
+            DNS  monitoring.dpl.lan / monitoring-01.dpl.lan
+            IP   10.10.0.2
+            SSH  2222 (VPN-only)
+    - Host:
+        - abbr: HO
+          href: ssh://host.dpl.lan
+          description: |
+            DNS  host.dpl.lan / host-01.dpl.lan
+            IP   10.10.0.3
+            SSH  à confirmer

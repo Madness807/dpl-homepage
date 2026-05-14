@@ -6,37 +6,36 @@ language: fr
 title: DPL — Portail
 description: Portail interne de la plateforme DPL
 theme: dark
-color: slate
+color: zinc
 
 # Cible par défaut : ouvrir les liens dans un nouvel onglet
 target: _blank
 
 # Style visuel
 headerStyle: boxed
-cardBlur: sm
+cardBlur: md
 hideVersion: true
+disableUpdateCheck: true
+disableCollapse: true
+fullWidth: true
+useEqualHeights: true
+statusStyle: dot
 
 # Ordre des catégories — du plus quotidien au plus infra.
 # Les services pas encore actifs renvoient vers la page WIP (cf. services.yaml).
 layout:
-  🛠️ VPS_PLATFORM:
+  Inventaire VPS:
+    style: row
+    columns: 3
+  VPS:
     style: row
     columns: 4
-  📦 VPS_REGISTRY_CODE:
+  VPS_Bastion:
+    style: row
+    columns: 2
+  Monitoring:
     style: row
     columns: 4
-  📊 VPS_MONITORING:
+  IA:
     style: row
-    columns: 4
-  🤖 VPS_AI_STACK:
-    style: row
-    columns: 4
-  🌐 VPS_CLIENT:
-    style: row
-    columns: 4
-  🔌 VPS_EDGE:
-    style: row
-    columns: 4
-  💾 NAS FLAVIO:
-    style: row
-    columns: 4
+    columns: 2

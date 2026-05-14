@@ -3,6 +3,5 @@
 docker.yaml
 kubernetes.yaml
 proxmox.yaml
-custom.css
 custom.js
 logs/

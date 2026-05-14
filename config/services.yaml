@@ -6,97 +6,60 @@
 # Les briques sans UI (BDD, caches, agents, vLLM, Loki, Tempo...) sont
 # documentées dans bookmarks.yaml.
 #
-# Quand un service passe en actif, on remplace son href par sa vraie URL et
-# on retire l'emoji 🚧 de sa description.
+# Quand un service passe en actif, on remplace son href par sa vraie URL.
 
-- 🛠️ VPS_PLATFORM:
+- VPS:
     - OpenProject:
         icon: openproject.png
         href: http://localhost:8080
         description: Gestion de projets et tickets
         siteMonitor: http://proxy:80
+    - Dokploy:
+        icon: dokploy.png
+        href: http://dokploy.dpl.lan:3000
+        description: Déploiement & gestion d'applications
+        siteMonitor: http://dokploy.dpl.lan:3000
     - Bot Discord (DPL):
         icon: discord.png
-        href: https://discord.com/app
+        href: https://discord.com/developers/home
         description: Passerelle OpenProject ↔ Discord
-    - DPL Admin:
-        icon: mdi-view-dashboard
-        href: http://localhost:3002
-        description: 🚧 Panneau admin de la plateforme
-    - AUTH (Authelia):
-        icon: authelia.png
-        href: http://localhost:3002
-        description: 🚧 SSO de la plateforme
-    - CI/CD:
-        icon: mdi-pipe
-        href: http://localhost:3002
-        description: 🚧 Pipelines de build & déploiement
-    - Backup:
-        icon: mdi-backup-restore
-        href: http://localhost:3002
-        description: 🚧 Sauvegardes orchestrées vers NAS
-
-- 🤖 VPS_AI_STACK:
-    - OpenWebUI:
-        icon: open-webui.png
-        href: http://localhost:3002
-        description: 🚧 Interface LLM (chat, RAG)
-    - LiteLLM:
-        icon: litellm.png
-        href: http://localhost:3002
-        description: 🚧 Gateway API LLM
-    - Pipelines (RAG):
-        icon: mdi-pipe-leak
-        href: http://localhost:3002
-        description: 🚧 RAG / filtres / workflows
-
-- 📦 VPS_REGISTRY_CODE:
-    - Forge Git:
-        icon: gitea.png
-        href: http://localhost:8929
-        description: Dépôts Git de la plateforme
-        siteMonitor: http://172.17.0.1:8929
-    - Docker Registry UI:
-        icon: docker.png
-        href: http://localhost:3002
-        description: 🚧 Images & artefacts (intégré à GitLab)
-    - Code Server:
-        icon: vscode.png
-        href: http://localhost:3002
-        description: 🚧 VS Code dans le navigateur
-
-- 🌐 VPS_CLIENT:
     - Apps clients:
         icon: mdi-web
         href: http://localhost:3004
         description: Demo — hébergement d'applications clients
         siteMonitor: http://dpl-vps04-client-demo:3004
 
-- 🔌 VPS_EDGE:
+- IA:
+    - OpenWebUI:
+        icon: open-webui.png
+        href: http://localhost:3002
+        description: Interface LLM (chat, RAG)
+
+- VPS_Bastion:
     - Traefik Dashboard:
         icon: traefik.png
-        href: http://localhost:3002
-        description: 🚧 Reverse proxy & TLS
+        href: http://traefik.dpl.lan:8080
+        description: Reverse proxy & TLS
+        siteMonitor: http://traefik.dpl.lan:8080
 
-- 📊 VPS_MONITORING:
+- Monitoring:
+    - GitLab:
+        icon: gitlab.png
+        href: http://grafana.dpl.lan/users/sign_in
+        description: Dépôts Git & registry Docker de la plateforme
+        siteMonitor: http://grafana.dpl.lan/users/sign_in
     - Grafana:
         icon: grafana.png
-        href: http://localhost:3003
+        href: http://grafana.dpl.lan:3000/
         description: Dashboards & visualisation
-        siteMonitor: http://grafana:3000
-    - Prometheus:
-        icon: prometheus.png
-        href: http://localhost:9090
-        description: Métriques & alertes
-        siteMonitor: http://prometheus:9090/-/healthy
+        siteMonitor: http://grafana.dpl.lan:3000/
+    - VictoriaMetrics:
+        icon: victoriametrics.png
+        href: http://localhost:8428/vmui/
+        description: Métriques & stockage time-series
+        siteMonitor: http://victoriametrics:8428/health
     - Alertmanager:
         icon: alertmanager.png
         href: http://localhost:9093
         description: Alertes en cours & silences
         siteMonitor: http://alertmanager:9093
-
-- 💾 NAS FLAVIO:
-    - NAS Web UI:
-        icon: synology.png
-        href: http://localhost:3002
-        description: 🚧 Stockage & sauvegardes
