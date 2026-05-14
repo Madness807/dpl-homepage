@@ -1,0 +1,23 @@
+---
+# Widgets affichés en haut de page.
+# Doc : https://gethomepage.dev/widgets/
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+    label: VPS_PLATFORM
+
+- search:
+    provider: duckduckgo
+    target: _blank
+    focus: true
+    showSearchSuggestions: true
+
+- datetime:
+    text_size: xl
+    locale: fr
+    format:
+      timeStyle: short
+      dateStyle: full
+      hour12: false

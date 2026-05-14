@@ -1,0 +1,8 @@
+# Fichiers auto-générés par Homepage au démarrage (templates vides).
+# Homepage les recrée s'ils manquent — pas la peine de les versionner.
+docker.yaml
+kubernetes.yaml
+proxmox.yaml
+custom.css
+custom.js
+logs/

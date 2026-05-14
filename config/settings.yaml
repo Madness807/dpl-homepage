@@ -1,0 +1,42 @@
+---
+# Configuration générale de la page d'accueil DPL.
+# Doc : https://gethomepage.dev/configs/settings/
+
+language: fr
+title: DPL — Portail
+description: Portail interne de la plateforme DPL
+theme: dark
+color: slate
+
+# Cible par défaut : ouvrir les liens dans un nouvel onglet
+target: _blank
+
+# Style visuel
+headerStyle: boxed
+cardBlur: sm
+hideVersion: true
+
+# Ordre des catégories — du plus quotidien au plus infra.
+# Les services pas encore actifs renvoient vers la page WIP (cf. services.yaml).
+layout:
+  🛠️ VPS_PLATFORM:
+    style: row
+    columns: 4
+  📦 VPS_REGISTRY_CODE:
+    style: row
+    columns: 4
+  📊 VPS_MONITORING:
+    style: row
+    columns: 4
+  🤖 VPS_AI_STACK:
+    style: row
+    columns: 4
+  🌐 VPS_CLIENT:
+    style: row
+    columns: 4
+  🔌 VPS_EDGE:
+    style: row
+    columns: 4
+  💾 NAS FLAVIO:
+    style: row
+    columns: 4

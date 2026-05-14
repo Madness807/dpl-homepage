@@ -1,0 +1,102 @@
+---
+# Liste des services affichés sur le portail DPL.
+# Doc : https://gethomepage.dev/configs/services/
+#
+# Règle : un service = une tuile uniquement s'il a une interface web cliquable.
+# Les briques sans UI (BDD, caches, agents, vLLM, Loki, Tempo...) sont
+# documentées dans bookmarks.yaml.
+#
+# Quand un service passe en actif, on remplace son href par sa vraie URL et
+# on retire l'emoji 🚧 de sa description.
+
+- 🛠️ VPS_PLATFORM:
+    - OpenProject:
+        icon: openproject.png
+        href: http://localhost:8080
+        description: Gestion de projets et tickets
+        siteMonitor: http://proxy:80
+    - Bot Discord (DPL):
+        icon: discord.png
+        href: https://discord.com/app
+        description: Passerelle OpenProject ↔ Discord
+    - DPL Admin:
+        icon: mdi-view-dashboard
+        href: http://localhost:3002
+        description: 🚧 Panneau admin de la plateforme
+    - AUTH (Authelia):
+        icon: authelia.png
+        href: http://localhost:3002
+        description: 🚧 SSO de la plateforme
+    - CI/CD:
+        icon: mdi-pipe
+        href: http://localhost:3002
+        description: 🚧 Pipelines de build & déploiement
+    - Backup:
+        icon: mdi-backup-restore
+        href: http://localhost:3002
+        description: 🚧 Sauvegardes orchestrées vers NAS
+
+- 🤖 VPS_AI_STACK:
+    - OpenWebUI:
+        icon: open-webui.png
+        href: http://localhost:3002
+        description: 🚧 Interface LLM (chat, RAG)
+    - LiteLLM:
+        icon: litellm.png
+        href: http://localhost:3002
+        description: 🚧 Gateway API LLM
+    - Pipelines (RAG):
+        icon: mdi-pipe-leak
+        href: http://localhost:3002
+        description: 🚧 RAG / filtres / workflows
+
+- 📦 VPS_REGISTRY_CODE:
+    - Forge Git:
+        icon: gitea.png
+        href: http://localhost:8929
+        description: Dépôts Git de la plateforme
+        siteMonitor: http://172.17.0.1:8929
+    - Docker Registry UI:
+        icon: docker.png
+        href: http://localhost:3002
+        description: 🚧 Images & artefacts (intégré à GitLab)
+    - Code Server:
+        icon: vscode.png
+        href: http://localhost:3002
+        description: 🚧 VS Code dans le navigateur
+
+- 🌐 VPS_CLIENT:
+    - Apps clients:
+        icon: mdi-web
+        href: http://localhost:3004
+        description: Demo — hébergement d'applications clients
+        siteMonitor: http://dpl-vps04-client-demo:3004
+
+- 🔌 VPS_EDGE:
+    - Traefik Dashboard:
+        icon: traefik.png
+        href: http://localhost:3002
+        description: 🚧 Reverse proxy & TLS
+
+- 📊 VPS_MONITORING:
+    - Grafana:
+        icon: grafana.png
+        href: http://localhost:3003
+        description: Dashboards & visualisation
+        siteMonitor: http://grafana:3000
+    - Prometheus:
+        icon: prometheus.png
+        href: http://localhost:9090
+        description: Métriques & alertes
+        siteMonitor: http://prometheus:9090/-/healthy
+    - Alertmanager:
+        icon: alertmanager.png
+        href: http://localhost:9093
+        description: Alertes en cours & silences
+        siteMonitor: http://alertmanager:9093
+
+- 💾 NAS FLAVIO:
+    - NAS Web UI:
+        icon: synology.png
+        href: http://localhost:3002
+        description: 🚧 Stockage & sauvegardes
