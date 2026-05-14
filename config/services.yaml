@@ -32,9 +32,9 @@
 - VPS:
     - OpenProject:
         icon: openproject.png
-        href: http://localhost:8080
+        href: http://openproject.dpl.lan
         description: Gestion de projets et tickets
-        siteMonitor: http://proxy:80
+        siteMonitor: http://openproject.dpl.lan
     - Dokploy:
         icon: dokploy.png
         href: http://dokploy.dpl.lan:3000
@@ -66,9 +66,9 @@
 - Monitoring:
     - GitLab:
         icon: gitlab.png
-        href: http://grafana.dpl.lan/users/sign_in
+        href: http://gitlab.dpl.lan
         description: Dépôts Git & registry Docker de la plateforme
-        siteMonitor: http://grafana.dpl.lan/users/sign_in
+        siteMonitor: http://gitlab.dpl.lan
     - Grafana:
         icon: grafana.png
         href: http://grafana.dpl.lan:3000/
