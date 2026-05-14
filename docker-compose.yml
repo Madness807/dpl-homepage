@@ -1,7 +1,6 @@
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:v0.10.9
-    container_name: dpl-vps02-plateforme-homepage
     restart: unless-stopped
     ports:
       - "3001:3000"
