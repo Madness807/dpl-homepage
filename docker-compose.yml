@@ -21,6 +21,7 @@ services:
     networks:
       - dpl-shared
       - monitoring_monitoring
+      - dokploy-network
 
 networks:
   dpl-shared:
@@ -29,3 +30,5 @@ networks:
   monitoring_monitoring:
     external: true
     name: monitoring_monitoring
+  dokploy-network:
+    external: true
