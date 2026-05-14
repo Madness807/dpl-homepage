@@ -4,43 +4,47 @@ Page d'accueil interne de la plateforme DPL ([gethomepage.dev](https://gethomepa
 
 ## Lancement
 
-Depuis la racine du repo :
+Build local :
 
 ```bash
-make homepage-up      # Démarre Homepage
-make homepage-logs    # Suit les logs
-make homepage-down    # Arrête
+docker build -t dpl-homepage .
+docker run --rm -p 3001:3001 dpl-homepage
 ```
 
-Ou directement :
+## Dokploy
 
-```bash
-docker compose -f platform/homepage/docker-compose.yml up -d
-```
+Déployer en type **Dockerfile** avec :
+
+- Build Path : `/`
+- Container Port : `3001`
+
+L'image garde Homepage en interne sur `3000` et expose `3001` via `start.js`. Cela évite de casser le chargement de `settings.yaml` tout en laissant Dokploy router vers `3001`.
 
 ## Accès
 
-**Phase 1 (sans Traefik) :** `http://<ip-vps-platform>:3001` ou `http://localhost:3001` en local.
+Local : `http://localhost:3001`
 
-**Phase 2 (avec Traefik + AUTH) :** `https://dpl.<domain>` derrière forward-auth Authelia.
+Dokploy : domaine configuré dans l'onglet Domains.
 
 ## Configuration
 
-Tout se passe dans `config/` (hot reload — pas besoin de redémarrer le container) :
+Tout se passe dans `config/` :
 
 | Fichier | Rôle |
 |---|---|
 | `settings.yaml` | Titre, thème, layout des catégories |
 | `services.yaml` | Liste des tuiles services |
 | `widgets.yaml` | Widgets d'en-tête (CPU, RAM, etc.) |
-| `bookmarks.yaml` | Liens secondaires |
+| `bookmarks.yaml` | Liens secondaires, vide actuellement |
+| `custom.css` | Habillage visuel du portail |
+| `custom.js` | Ajustements client légers |
 
-Pour ajouter un service : éditer `services.yaml`, sauvegarder. Homepage recharge tout seul.
+Pour ajouter un service : éditer `services.yaml`, rebuild et redéployer.
 
-## Phase 1 — limitations assumées
+## Notes
 
-- ⚠️ `HOMEPAGE_ALLOWED_HOSTS=*` : aucune restriction d'accès (cf. ADR 0001).
-- ⚠️ Pas d'auto-discovery Docker (YAML statique uniquement).
-- ⚠️ Pas de widget vivant (les tuiles sont des liens, pas des panneaux de monitoring).
+- `HOMEPAGE_ALLOWED_HOSTS=*` est défini pour éviter les cassures avec les domaines temporaires Dokploy/sslip.io.
+- Les tuiles restent statiques et définies en YAML.
+- Les métriques sont basées sur VictoriaMetrics, pas Prometheus.
 
-Toutes ces limitations seront levées en Phase 2 (Traefik + AUTH + Prometheus widgets).
+Quand le domaine final sera stable, remplacer `HOMEPAGE_ALLOWED_HOSTS=*` par une liste explicite de domaines autorisés.

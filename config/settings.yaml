@@ -3,7 +3,7 @@
 # Doc : https://gethomepage.dev/configs/settings/
 
 language: fr
-title: DPL — Portail
+title: DPL - Portail
 description: Portail interne de la plateforme DPL
 theme: dark
 color: zinc

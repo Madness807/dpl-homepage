@@ -2,11 +2,32 @@
 # Liste des services affichés sur le portail DPL.
 # Doc : https://gethomepage.dev/configs/services/
 #
-# Règle : un service = une tuile uniquement s'il a une interface web cliquable.
-# Les briques sans UI (BDD, caches, agents, vLLM, Loki, Tempo...) sont
-# documentées dans bookmarks.yaml.
+# Règle : un service = une tuile actionnable ou un repère d'inventaire utile.
 #
 # Quand un service passe en actif, on remplace son href par sa vraie URL.
+
+- Inventaire VPS:
+    - Bastion:
+        icon: mdi-server-network
+        href: ssh://bastion.dpl.lan:2222
+        description: |
+          DNS  bastion.dpl.lan / bastion-01.dpl.lan
+          IP   10.10.0.1
+          SSH  2222 (public ou VPN)
+    - Monitoring:
+        icon: mdi-server-network
+        href: ssh://monitoring.dpl.lan:2222
+        description: |
+          DNS  monitoring.dpl.lan / monitoring-01.dpl.lan
+          IP   10.10.0.2
+          SSH  2222 (VPN-only)
+    - Host:
+        icon: mdi-server-network
+        href: ssh://host.dpl.lan
+        description: |
+          DNS  host.dpl.lan / host-01.dpl.lan
+          IP   10.10.0.3
+          SSH  à confirmer
 
 - VPS:
     - OpenProject:
