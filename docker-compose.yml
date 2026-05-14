@@ -1,16 +1,11 @@
 services:
   homepage:
-    image: ghcr.io/gethomepage/homepage:v0.10.9
+    build: .
     restart: unless-stopped
     ports:
       - "3001:3000"
-    volumes:
-      - ./config:/app/config:rw
     env_file:
       - .env
-    environment:
-      HOMEPAGE_ALLOWED_HOSTS: "${HOMEPAGE_ALLOWED_HOSTS:-localhost}"
-      NODE_OPTIONS: "${NODE_OPTIONS:---dns-result-order=ipv4first}"
     networks:
       - dokploy-network
 
