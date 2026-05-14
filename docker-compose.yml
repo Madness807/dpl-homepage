@@ -11,12 +11,6 @@ services:
     environment:
       HOMEPAGE_ALLOWED_HOSTS: "${HOMEPAGE_ALLOWED_HOSTS:-localhost}"
       NODE_OPTIONS: "${NODE_OPTIONS:---dns-result-order=ipv4first}"
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/healthcheck"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 15s
     networks:
       - dokploy-network
 
