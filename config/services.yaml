@@ -79,6 +79,15 @@
         href: http://localhost:8428/vmui/
         description: Métriques & stockage time-series
         siteMonitor: http://victoriametrics:8428/health
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: http://uptime.dpl.lan
+        description: Monitoring uptime & status pages
+        siteMonitor: http://uptime.dpl.lan
+        widget:
+            type: uptimekuma
+            url: http://uptime.dpl.lan
+            slug: default
     - Alertmanager:
         icon: alertmanager.png
         href: http://localhost:9093
