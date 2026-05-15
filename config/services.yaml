@@ -66,9 +66,9 @@
 - Monitoring:
     - GitLab:
         icon: gitlab.png
-        href: https://gitlab.dpl.lan
+        href: http://gitlab.dpl.lan
         description: Dépôts Git & registry Docker de la plateforme
-        siteMonitor: https://gitlab.dpl.lan
+        siteMonitor: http://gitlab.dpl.lan
     - Grafana:
         icon: grafana.png
         href: http://grafana.dpl.lan
