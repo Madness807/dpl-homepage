@@ -66,14 +66,14 @@
 - Monitoring:
     - GitLab:
         icon: gitlab.png
-        href: http://gitlab.dpl.lan
+        href: https://gitlab.dpl.lan
         description: Dépôts Git & registry Docker de la plateforme
-        siteMonitor: http://gitlab.dpl.lan
+        siteMonitor: https://gitlab.dpl.lan
     - Grafana:
         icon: grafana.png
-        href: http://grafana.dpl.lan:3000/
+        href: http://grafana.dpl.lan
         description: Dashboards & visualisation
-        siteMonitor: http://grafana.dpl.lan:3000/
+        siteMonitor: http://grafana.dpl.lan
     - VictoriaMetrics:
         icon: victoriametrics.png
         href: http://localhost:8428/vmui/
@@ -84,10 +84,6 @@
         href: http://uptime.dpl.lan
         description: Monitoring uptime & status pages
         siteMonitor: http://uptime.dpl.lan
-        widget:
-            type: uptimekuma
-            url: http://uptime.dpl.lan
-            slug: default
     - Alertmanager:
         icon: alertmanager.png
         href: http://localhost:9093
